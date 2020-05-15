@@ -20,7 +20,8 @@ def fig(point, length, angle):
         print(i, name)
     shape = int(input('введите желаемую форму   '))
     angles = {0:120, 1:90, 2:72, 3:60}
-    for angle in range(angle, angle + 359, angle1 = int(angles[shape])):
+    print(int(angles[shape]))
+    for angle in range(angle, angle + 359, angles[shape]):
         v1 = sd.get_vector(start_point=point, angle=angle, length=length, width=1)
         v1.draw()
         point=v1.end_point
