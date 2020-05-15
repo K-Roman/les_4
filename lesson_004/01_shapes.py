@@ -2,12 +2,70 @@
 
 import simple_draw as sd
 
+sd.resolution = (1200, 600)
+
 # Часть 1.
 # Написать функции рисования равносторонних геометрических фигур:
 # - треугольника
+
+def fig(point, length, angle, angle1):
+    for angle in range(angle, angle + 359, angle1):
+        v1 = sd.get_vector(start_point=point, angle=angle, length=length, width=1)
+        v1.draw()
+        point=v1.end_point
+
+def treeangle(point = sd.get_point(300, 300), length = 100, angle = 0):
+    fig(point=point, length=length, angle=angle, angle1=120)
+    l1=sd.line(point,point)
+
+#     for angle in range(angle, angle + 361, 120):
+#         v1 = sd.get_vector(start_point=point, angle=angle, length=length, width=3)
+#         v1.draw()
+#         point=v1.end_point
+# treeangle(point = sd.get_point(100, 100), length = 200, angle = 30)
+
 # - квадрата
-# - пятиугольника
-# - шестиугольника
+def quadro(point = sd.get_point(300, 300), length = 100, angle = 0):
+    fig(point=point, length=length, angle=angle, angle1=90)
+#     angle_1 = 90
+#     fig(point=point, length=100, angle=0, angle_1=angle_1)
+# #     for angle in range(angle, angle + 361, 90):
+# #         v1 = sd.get_vector(start_point=point, angle=angle, length=length, width=3)
+# #         v1.draw()
+# #         point=v1.end_point
+# # quadro(point = sd.get_point(400, 100), length = 200, angle = 45)
+#
+#
+# # - пятиугольника
+def fangle(point = sd.get_point(100, 300), length = 100, angle = 0):
+    fig(point=point, length=length, angle=angle, angle1=72)
+#     angle_1 = 72
+#     fig(point=point, length=100, angle=0, angle_1=angle_1)
+#     # for angle in range(angle, angle + 361, 72):
+# #         v1 = sd.get_vector(start_point=point, angle=angle, length=length, width=3)
+# #         v1.draw()
+# #         point=v1.end_point
+# # fangle(point = sd.get_point(600, 50), length = 100, angle = 0)
+#
+#
+# # - шестиугольника
+#
+def sangle(point = sd.get_point(300, 300), length = 100, angle = 0):
+    fig(point=point, length=length, angle=angle, angle1=60)
+#     angle_1 = 60
+#     fig(point=point, length = 100, angle  = 0, angle_1=angle_1)
+#     # for angle in range(angle, angle + 361, 60):
+#     #     v1 = sd.get_vector(start_point=point, angle=angle, length=length, width=3)
+#     #     v1.draw()
+#     #     point=v1.end_point
+# sangle(point = sd.get_point(200, 300), length = 100, angle = 0)
+
+treeangle(point = sd.get_point(100, 100), length = 500, angle = 30)
+quadro(point = sd.get_point(400, 100), length = 200, angle = 45)
+fangle(point = sd.get_point(600, 50), length = 100, angle = 0)
+sangle(point = sd.get_point(200, 300), length = 100, angle = 0)
+
+
 # Все функции должны принимать 3 параметра:
 # - точка начала рисования
 # - угол наклона
